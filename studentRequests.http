@@ -1,14 +1,14 @@
 ### GET request to example server
-GET http://localhost:8080
+GET http://localhost:8085
 
 ###
-GET http://localhost:8080/api/students
+GET http://localhost:8085/api/students
 ###
-GET http://localhost:8080/api/students/3
+GET http://localhost:8085/api/students/1
 ###
-DELETE http://localhost:8080/api/students/1
+DELETE http://localhost:8085/api/students/1
 ###
-POST http://localhost:8080/api/students
+POST http://localhost:8085/api/students
 Content-Type: application/json
 
 {
@@ -19,7 +19,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8080/api/students/3
+PUT http://localhost:8085/api/students/3
 Content-Type: application/json
 
 {
