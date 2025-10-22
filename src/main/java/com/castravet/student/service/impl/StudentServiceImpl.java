@@ -3,6 +3,7 @@ package com.castravet.student.service.impl;
 import com.castravet.student.dto.StudentDTO;
 import com.castravet.student.dto.mapper.StudentMapper;
 import com.castravet.student.entity.Student;
+import com.castravet.student.exception.BadRequestException;
 import com.castravet.student.repository.StudentRepository;
 import com.castravet.student.service.StudentService;
 import jakarta.persistence.EntityNotFoundException;
@@ -43,6 +44,9 @@ public class StudentServiceImpl implements StudentService {
     @Transactional
     public void addStudent(StudentDTO studentDTO) {
         log.info("adding a new student  {} {}", studentDTO.getFirstName(), studentDTO.getLastName());
+        if (studentDTO.getEmail() == null || studentDTO.getEmail().isBlank()){
+            throw new BadRequestException("Email is required!");
+        }
         Student student = studentMapper.studentDTOtoEntity(studentDTO);
         studentRepository.save(student);
         log.info("student added successfully with email: {}", student.getEmail());
