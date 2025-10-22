@@ -42,7 +42,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     @Transactional
     public void addStudent(StudentDTO studentDTO) {
-        log.info("adding new student  {} {}", studentDTO.getFirstName(), studentDTO.getLastName());
+        log.info("adding a new student  {} {}", studentDTO.getFirstName(), studentDTO.getLastName());
         Student student = studentMapper.studentDTOtoEntity(studentDTO);
         studentRepository.save(student);
         log.info("student added successfully with email: {}", student.getEmail());
