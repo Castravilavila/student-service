@@ -11,4 +11,4 @@ target/
 *.ipr
 
 # Ignore local HTTP request files
-studentRequests.http
+*.http
