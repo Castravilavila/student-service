@@ -1,0 +1,22 @@
+services:
+  db:
+    container_name: postgress-student-container
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: stuser
+      POSTGRES_PASSWORD: stpassword
+      PGDATA: /data/postgres
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5332:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:

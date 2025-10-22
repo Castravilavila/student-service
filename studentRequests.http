@@ -1,0 +1,30 @@
+### GET request to example server
+GET http://localhost:8080
+
+###
+GET http://localhost:8080/api/students
+###
+GET http://localhost:8080/api/students/3
+###
+DELETE http://localhost:8080/api/students/1
+###
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+  "firstName": "Jamila",
+  "lastName": "Pidr",
+  "email": "jamila@gmail.com",
+  "titleBachelor": "informational scurity"
+}
+
+###
+PUT http://localhost:8080/api/students/3
+Content-Type: application/json
+
+{
+  "firstName": "Mircea",
+  "lastName": "Pidr",
+  "email": "jamila@gmail.com",
+  "titleBachelor": "Cryptocurrency"
+}
