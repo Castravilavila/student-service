@@ -12,3 +12,5 @@ target/
 
 # Ignore local HTTP request files
 *.http
+
+/logs/
